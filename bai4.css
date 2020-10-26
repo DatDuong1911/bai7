@@ -1,0 +1,32 @@
+.tab {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    border: 1px solid blue;
+    text-align: center;
+    cursor: wait;
+}
+
+.tab:hover {
+    background-color: teal;
+    transition-delay: 0.5s;
+}
+
+.content {
+    width: 300px;
+    background-color: crimson;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    width: 300px;
+}
+
+.content-active {
+    display: block;
+}
+
+.tab-active {
+    background-color: coral;
+}

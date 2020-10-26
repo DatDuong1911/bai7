@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bai4.css">
+</head>
+
+<body>
+    <div class="tab tab-active" data-id="1"> Tab 1 </div>
+    <div class="tab" data-id="2"> Tab 1 </div>
+    <div class="tab" data-id="3"> Tab 1 </div>
+    <div class="content">
+        <div class="tab-content content content-active ">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quam exercitationem laborum sequi adipisci id sunt temporibus cupiditate molestiae laboriosam expedita delectus, repellat, impedit iusto veritatis. Vitae odio consectetur labore?
+            Molestias eveniet harum soluta accusantium, consequatur quo!</div>
+        <div class="tab-content content">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione aliquam minima, sapiente repellendus ut ex quae quidem est tempora maxime, assumenda eos maiores corrupti hic harum saepe
+            dolorum sequi consequuntur. lorem Molestias eveniet harum soluta accusantium, consequatur quo!</div>
+        <div class="tab-content content">3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet harum soluta accusantium, Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, nemo harum veritatis beatae earum nisi quas distinctio a veniam rerum quidem
+            fugit, laboriosam tempora sunt at enim illum recusandae iste. consequatur quo!</div>
+    </div>
+</body>
+<script>
+    var tab = document.getElementsByClassName("tab");
+    var tab_content = document.getElementsByClassName("tab-content");
+    for (var index = 0; index < tab.length; index++) {
+        tab[index].addEventListener("click", function() {
+            for (var i = 0; i < tab.length; i++) {
+                tab[i].classList.remove("tab-active");
+                tab_content[i].classList.remove("content-active");
+            }
+            this.classList.add("tab-active");
+            var indexNow = this.getAttribute("data-id")
+            console.log(tab_content[indexNow], index)
+            tab_content[indexNow - 1].classList.add("content-active");
+        })
+    }
+</script>
+
+</html>
